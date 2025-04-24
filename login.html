@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedStock - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(rgba(161, 182, 225, 0.5), rgba(23, 39, 92, 0.5)), url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-2 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-extrabold text-opacity-80 text-[#081F5C] ">MedStock</h1>
+        </div>
+    </nav>
+
+    <!-- Form Container with Enhanced Shadow -->
+    <div class="flex items-center justify-center min-h-[calc(100vh-64px)] py-50 px-54">
+        <div class="bg-white bg-opacity-70 backdrop-blur-sm rounded-lg shadow-2xl p-8 w-full max-w-md">
+            <!-- Shadow-2xl gives a stronger shadow effect -->
+            <h1 class="text-2xl font-bold text-center text-[#081F5C] mb-1">Welcome to MedStock.</h1><p>
+
+            </p>
+
+            
+            <form id="loginForm" class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input id="email" type="email" placeholder="Email" required 
+                         class="w-full px-4 py-2 border border-gray-300 rounded-full shadow-xl focus:ring-2 focus:ring-[#081F5C] focus:border-[#081F5C]">
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <input id="password" type="password" placeholder="Create password" required 
+                         class="w-full px-4 py-2 border border-gray-300 rounded-full shadow-xl focus:ring-2 focus:ring-[#081F5C] focus:border-[#081F5C]">
+                </div>
+              
+                <div class="border-t border-gray-300 my-4"></div>
+                
+                <button type="submit" 
+                     class="w-full bg-[#D0DDEA] text-[#081F5C] py-2 px-4 rounded-full font-bold hover:bg-[grey] transition shadow-md hover:shadow-lg">
+                     Log in
+                </button>
+              
+                <div class="relative my-4">
+                  <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div class="relative flex justify-center">
+                    <span class="px-2 text-sm text-gray-500">Or</span>
+                  </div>
+                </div>
+                
+                <p class="text-center text-sm text-gray-600">
+                  Don't have an account? <a href="signUp.html" class="text-[#081F5C] font-medium hover:underline">Sign Up</a>
+                </p>
+              </form>
+              
+              <script>
+                document.getElementById("loginForm").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Hindari submit default
+              
+                  const email = document.getElementById("email").value;
+                  const password = document.getElementById("password").value;
+              
+                  if (!email.includes("@")) {
+                    alert("Email harus mengandung '@'");
+                  } else if (password.length < 6) {
+                    alert("Password harus minimal 6 karakter");
+                  } else {
+                    alert("Login berhasil!");
+                    window.location.href = "index.html";
+                  }
+                });
+              </script>
+               
+            </form>
+        </div>
+    </div>
+</body>
+</html>

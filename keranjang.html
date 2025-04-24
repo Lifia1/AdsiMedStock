@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>MedStock - Search</title>
+    
+    </head>
+
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Navbar -->
+  <div class="flex items-center justify-between p-4 border-b">
+    <h1 class="text-4xl text-opacity-80 font-extrabold text-[#081F5C]">MedStock</h1>
+    <div class="flex-1 mx-4">
+      <input type="text" placeholder="Search" class="w-full border  rounded px-3 py-2" />
+    </div>
+    <nav class="space-x-4 flex items-center">
+      <a href="index.html"  class= text-[#081F5C]  font-medium flex items-center gap-1">
+        <i class="fas fa-home"></i> HOME
+      </a>
+      <a href="keranjang.html" class="text-[#081F5C] font-medium flex items-center gap-1">
+        <i class="fas fa-shopping-cart"></i> CART
+      </a>
+      <a href="user.html" class="text-[#081F5C] font-medium flex items-center gap-1">
+        <i class="fas fa-user"></i> PROFILE
+      </a>
+    </nav>
+</div>
+
+    <!-- Konten Keranjang -->
+    <main class="p-6">
+
+      <!-- Item 1 -->
+      <div class="cart-item border border-[#0B1F5C] rounded-lg p-4 mb-4 flex items-center gap-4" data-price="252000">
+        <input type="checkbox" class="w-5 h-5 text-[#0B1F5C]" />
+        <img src="obatMedstock.png" alt="Inavitamax" class="w-20 h-auto object-contain" >
+        <div class="flex-1">
+          <p class="font-semibold text-[#0B1F5C] leading-tight">Inavitamax Omega Kids <br> Softgel</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="decrement border border-[#0B1F5C] px-2 rounded text-[#0B1F5C]">-</button>
+          <span class="quantity">2</span>
+          <button class="increment border border-[#0B1F5C] px-2 rounded text-[#0B1F5C]">+</button>
+        </div>
+        <div class="text-[#0B1F5C] font-semibold w-24 text-right price">Rp504.000</div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item border border-[#0B1F5C] rounded-lg p-4 mb-4 flex items-center gap-4" data-price="9703">
+        <input type="checkbox" class="w-5 h-5 text-[#0B1F5C]" />
+        <img src="bufadoll.jpg" alt="Bufadol" class="w-20 h-auto object-contain" />
+        <div class="flex-1">
+          <p class="font-semibold text-[#0B1F5C] leading-tight">Bufadol 650mg Caplet</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="decrement border border-[#0B1F5C] px-2 rounded text-[#0B1F5C]">-</button>
+          <span class="quantity">1</span>
+          <button class="increment border border-[#0B1F5C] px-2 rounded text-[#0B1F5C]">+</button>
+        </div>
+        <div class="text-[#0B1F5C] font-semibold w-24 text-right price">Rp9.703</div>
+      </div>
+
+      <!-- Total & Checkout -->
+      <div class="flex justify-between items-center mt-6">
+        <div class="flex items-center gap-2 text-[#0B1F5C] text-lg font-bold">
+          <i data-feather="shopping-cart"></i>
+          <span id="total-price">Rp0</span>
+        </div>
+        <button class="bg-[#0B1F5C] hover:bg-[#334EAC] text-white px-6 py-2 rounded-lg font-semibold">
+          <a href="membayarPesanan.html" class="text-white px-6 py-2 rounded-lg font-semibold">Checkout</a>
+          
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Script -->
+  <script>
+    feather.replace();
+
+    function formatRupiah(number) {
+      return 'Rp' + number.toLocaleString('id-ID');
+    }
+
+    function updateTotal() {
+      let total = 0;
+      document.querySelectorAll('.cart-item').forEach(item => {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        const pricePerItem = parseInt(item.dataset.price);
+        const quantity = parseInt(item.querySelector('.quantity').textContent);
+        if (checkbox.checked) {
+          total += pricePerItem * quantity;
+        }
+      });
+      document.getElementById('total-price').textContent = formatRupiah(total);
+    }
+
+    document.querySelectorAll('.cart-item').forEach(item => {
+      const quantityEl = item.querySelector('.quantity');
+      const priceEl = item.querySelector('.price');
+      const basePrice = parseInt(item.dataset.price);
+
+      const updateItemPrice = () => {
+        const qty = parseInt(quantityEl.textContent);
+        priceEl.textContent = formatRupiah(qty * basePrice);
+      };
+
+      item.querySelector('.increment').addEventListener('click', () => {
+        let qty = parseInt(quantityEl.textContent);
+        qty++;
+        quantityEl.textContent = qty;
+        updateItemPrice();
+        updateTotal();
+      });
+
+      item.querySelector('.decrement').addEventListener('click', () => {
+        let qty = parseInt(quantityEl.textContent);
+        if (qty > 1) {
+          qty--;
+          quantityEl.textContent = qty;
+          updateItemPrice();
+          updateTotal();
+        }
+      });
+
+      // checkbox untuk update total
+      item.querySelector('input[type="checkbox"]').addEventListener('change', updateTotal);
+    });
+
+    updateTotal();
+  </script>
+</body>
+
+</html>
