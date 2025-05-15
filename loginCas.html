@@ -46,7 +46,15 @@
         Log in
       </button>
     </form>
-  </div>
+  </div> 
+
+        
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = "mengelolaDataTransaksi.html"; 
+    });
+  </script>
 
 </body>
 </html>
