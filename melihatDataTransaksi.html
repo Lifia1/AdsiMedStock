@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MedStock</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #cfd8e2;
+    }
+
+    /* Header/Navbar */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #081F5C;
+      opacity: 0.8;
+      margin: 0;
+    }
+
+    header nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #081F5C;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* Sidebar */
+    .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #4d6073;
+  color: white;
+  padding: 92px 20px 20px;
+  box-sizing: border-box;
+}
+
+
+    .sidebar h2 {
+      margin: 0 0 40px 0;
+      font-size: 24px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .sidebar ul li svg {
+      margin-right: 10px;
+      fill: white;
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 220px;
+      padding: 120px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .report-title {
+      background-color: #4d6073;
+      color: white;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      padding: 10px 20px;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-barcode {
+      background-color: #ffffff;
+      color: #000;
+      padding: 20px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .barcode-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .card-barcode img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .info {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .info b {
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .buttons button {
+      background-color: #e0e0e0;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #d2d2d2;
+    }
+
+    /* Footer */
+    footer {
+      margin-left: 220px;
+      padding: 1rem;
+      background-color: #ffffff;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Navbar -->
+  <header>
+    <h1>MedStock</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2></h2>
+    <ul>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg> Create Transaction Reports
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5S10.5 3.17 10.5 4V4.68C7.64 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"/></svg> Notifications
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg> Account
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="report-title">Transaction Report</div>
+    <div class="card-barcode">
+      <div class="barcode-row">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Invoice%203105" alt="QR Code">
+        <div class="info">
+          <p><b>Date:</b> 03-03-2025</p>
+          <p><b>Name:</b> Ayyin</p>
+          <p><b>Customer ID:</b> 3105</p>
+          <p><b>Product:</b> <b>Inavitamax Omega Kids Softgel</b></p>
+          <p><b>Amount:</b> 1</p>
+          <p><b>Total:</b> 252.000</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button>Save</button>
+        <button>Print Receipt</button>
+        <button>Scan Barcode</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="font-semibold">Privacy Center</p>
+    <div>
+      <a href="#">Notice of Privacy Practices</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Online Privacy & Security Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
