@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>MedStock - Transaction List</title>
+</head>
+<body class="bg-gray-200 font-sans min-h-screen"> 
+
+  <!-- Header/Navbar -->
+  <header class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-[#081F5C]">MedStock</h1>
+    <nav class="flex space-x-6 text-[#081F5C] text-lg">
+      <!-- Optional nav links can be added here -->
+    </nav>
+  </header>
+
+  <!-- Sidebar + Main Content -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-60 bg-[#2E3F56] text-white p-6 space-y-6 flex-shrink-0">
+      <nav class="space-y-4">
+        <a href="#" class="flex items-center gap-3 hover:text-blue-300">
+          <i data-feather="home"></i> Home
+        </a>
+        <a href="#" class="flex items-center gap-3 hover:text-blue-300">
+          <i data-feather="file-text"></i> Create Transaction Reports
+        </a>
+        <a href="#" class="flex items-center gap-3 hover:text-blue-300">
+          <i data-feather="bell"></i> Notifications
+        </a>
+        <a href="#" class="flex items-center gap-3 hover:text-blue-300">
+          <i data-feather="user"></i> Account
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-6">
+      <!-- Page Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-[#081F5C]">Transaction Reports</h2>
+        <button class="flex items-center bg-gray-300 text-sm text-gray-700 px-4 py-2 rounded-full">
+          <span class="w-3 h-3 rounded-full bg-blue-500 mr-2"></span> add new transaction
+        </button>
+      </div>
+
+      <!-- Transaction Cards -->
+      <div class="space-y-6">
+        <!-- Card 1 -->
+        <div class="bg-[#4A6785] text-white rounded-lg p-6 shadow-md flex justify-between items-center">
+          <div>
+            <p class="text-sm">03/03/2025 - 12:30 AM</p>
+            <p class="text-lg font-bold">Inavitamax Omega Kids Softgel</p>
+            <p class="mt-2">Total Amount: <strong>Rp 253.000</strong></p>
+            <p>Total Purchases: <strong>1</strong></p>
+          </div>
+          <div class="flex gap-4 text-xl">
+            <button><i data-feather="printer"></i></button>
+            <button><i data-feather="eye-off"></i></button>
+            <button><i data-feather="mail"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[#4A6785] text-white rounded-lg p-6 shadow-md flex justify-between items-center">
+          <div>
+            <p class="text-sm">01/03/2025 - 09:59 AM</p>
+            <p class="text-lg font-bold">Mederma Pm Krim 20g<br>Fasidol 160mg/5ml Forte Sirup 60ml</p>
+            <p class="mt-2">Total Amount: <strong>Rp 127.329</strong></p>
+            <p>Total Purchases: <strong>2</strong></p>
+          </div>
+          <div class="flex gap-4 text-xl">
+            <button><i data-feather="printer"></i></button>
+            <button><i data-feather="eye-off"></i></button>
+            <button><i data-feather="mail"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#4A6785] text-white rounded-lg p-6 shadow-md flex justify-between items-center">
+          <div>
+            <p class="text-sm">25/02/2025 - 11:00 AM</p>
+            <p class="text-lg font-bold">Nourish Skin Ultimate Tablet Isi 15 Tablet</p>
+            <p class="mt-2">Total Amount: <strong>Rp 905.495</strong></p>
+            <p>Total Purchases: <strong>5</strong></p>
+          </div>
+          <div class="flex gap-4 text-xl">
+            <button><i data-feather="printer"></i></button>
+            <button><i data-feather="eye-off"></i></button>
+            <button><i data-feather="mail"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
