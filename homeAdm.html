@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedStock - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-[#F9FAFB] font-sans flex min-h-screen">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#9BB1D4] text-[#081F5C] p-6 flex flex-col space-y-6 min-h-screen">
+   <h1 class="text-2xl font-extrabold">MedStock</h1>
+
+    <!-- Search -->
+    <div class="relative">
+      <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 rounded-md bg-[#EFEFEF] text-sm focus:outline-none"/>
+      <span class="absolute left-3 top-2.5 text-[#334EAC]">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+
+    <!-- Menu Items -->
+    <nav class="flex flex-col gap-2 text-sm font-medium">
+      <a href="homeAdm.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+      <a href="MeneData.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-circle-plus"></i> Medicines Management
+      </a>
+      <a href="AdmNotif.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-bell"></i> Notifications
+      </a>
+      <a href="AdmAcc.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-user"></i> Account
+      </a>
+      <a href="melihatLaporan.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-chart-column"></i> Sales Report
+      </a>
+    </nav>
+  </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+      <header class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800">Welcome back, FIA!</h2>
+          <p class="text-gray-500 text-sm">
+            Here's what's happening with your pharmacy today.
+          </p>
+        </div>
+        <div class="text-sm text-gray-500 text-right">
+          <p>Thursday, May 22, 2025</p>
+          <p>Last updated 5 minutes ago</p>
+        </div>
+      </header>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded shadow p-4">
+          <p class="text-gray-500 text-sm">Total Obat</p>
+          <h3 class="text-2xl font-bold">2,451</h3>
+          <p class="text-green-600 text-sm">+12% vs last month</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <p class="text-gray-500 text-sm">Stok Menipis</p>
+          <h3 class="text-2xl font-bold">28</h3>
+          <p class="text-orange-600 text-sm">+5 more than yesterday</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <p class="text-gray-500 text-sm">Hampir Kadaluarsa</p>
+          <h3 class="text-2xl font-bold">15</h3>
+          <p class="text-red-600 text-sm">Within 30 days</p>
+        </div>
+        <div class="bg-white rounded shadow p-4">
+          <p class="text-gray-500 text-sm">Total Nilai</p>
+          <h3 class="text-2xl font-bold">Rp 1.2M</h3>
+          <p class="text-green-600 text-sm">+8% vs last month</p>
+        </div>
+      </div>
+
+      <!-- Aktivitas Terkini -->
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded shadow p-4">
+          <h3 class="font-semibold text-gray-800 mb-3">Aktivitas Terkini</h3>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li><span class="text-green-600 font-bold">+</span> Penambahan stok Paracetamol 500mg <span class="text-gray-400">Hari ini, 10:45 AM</span></li>
+            <li><span class="text-green-600 font-bold">+</span> Penjualan Amoxicillin 500mg <span class="text-gray-400">Hari ini, 09:30 AM</span></li>
+            <li><span class="text-yellow-500 font-bold">!</span> Stok Ibuprofen 400mg menipis <span class="text-gray-400">Kemarin, 15:20 PM</span></li>
+            <li><span class="text-purple-500 font-bold">~</span> Update harga Omeprazole 20mg <span class="text-gray-400">Kemarin, 14:15 PM</span></li>
+          </ul>
+        </div>
+
+        <!-- Tabel Obat Terbaru -->
+        <div class="bg-white rounded shadow p-4">
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="font-semibold text-gray-800">Daftar Obat Terbaru</h3>
+            <a href="#" class="text-sm text-blue-600 hover:underline">View all</a>
+          </div>
+          <table class="w-full text-sm text-left">
+            <thead>
+              <tr class="text-gray-500 border-b">
+                <th class="py-2">KODE</th>
+                <th class="py-2">NAMA OBAT</th>
+                <th class="py-2">JENIS</th>
+                <th class="py-2">STOK</th>
+                <th class="py-2">STATUS</th>
+                <th class="py-2">AKSI</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-b">
+                <td>MED001</td>
+                <td>Paracetamol 500mg</td>
+                <td>Tablet</td>
+                <td>1,200</td>
+                <td><span class="text-xs px-2 py-1 rounded bg-green-100 text-green-600">Normal</span></td>
+                <td><a href="#" class="text-blue-600">Detail</a></td>
+              </tr>
+              <tr class="border-b">
+                <td>MED002</td>
+                <td>Amoxicillin 500mg</td>
+                <td>Kapsul</td>
+                <td>50</td>
+                <td><span class="text-xs px-2 py-1 rounded bg-red-100 text-red-600">Stok Menipis</span></td>
+                <td><a href="#" class="text-blue-600">Detail</a></td>
+              </tr>
+              <tr class="border-b">
+                <td>MED003</td>
+                <td>Ibuprofen 400mg</td>
+                <td>Tablet</td>
+                <td>950</td>
+                <td><span class="text-xs px-2 py-1 rounded bg-orange-100 text-orange-600">Hampir Kadaluarsa</span></td>
+                <td><a href="#" class="text-blue-600">Detail</a></td>
+              </tr>
+              <tr class="border-b">
+                <td>MED004</td>
+                <td>Omeprazole 20mg</td>
+                <td>Kapsul</td>
+                <td>600</td>
+                <td><span class="text-xs px-2 py-1 rounded bg-green-100 text-green-600">Normal</span></td>
+                <td><a href="#" class="text-blue-600">Detail</a></td>
+              </tr>
+              <tr>
+                <td>MED005</td>
+                <td>Cetirizine 10mg</td>
+                <td>Tablet</td>
+                <td>750</td>
+                <td><span class="text-xs px-2 py-1 rounded bg-green-100 text-green-600">Normal</span></td>
+                <td><a href="#" class="text-blue-600">Detail</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-3 text-right">
+            <a href="#" class="text-sm text-blue-600 hover:underline">Lihat Semua Data Obat →</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

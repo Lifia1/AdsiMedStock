@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  <title>Sales Report - MedStock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/ea37bc42c2.js" crossorigin="anonymous"></script>
+</head>
+<body class="flex h-screen bg-[#CBD5E1] font-sans">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#9BB1D4] text-[#081F5C] p-6 flex flex-col space-y-6">
+    <h1 class="text-2xl font-extrabold">MedStock</h1>
+
+    <!-- Search -->
+    <div class="relative">
+      <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 rounded-md bg-[#EFEFEF] text-sm focus:outline-none"/>
+      <span class="absolute left-3 top-2.5 text-[#334EAC]">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+
+    <!-- Menu Items -->
+    <nav class="flex flex-col gap-2 text-sm font-medium">
+      <a href="homeAdm.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+      <a href="MeneData.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-circle-plus"></i> Medicines Management
+      </a>
+      <a href="AdmNotif.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-bell"></i> Notifications
+      </a>
+      <a href="AdmAcc.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-user"></i> Account
+      </a>
+      <a href="melihatLaporan.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-chart-column"></i> Sales Report
+      </a>
+    </nav>
+  </aside>
+<body class="bg-gray-50 p-8 font-sans">
+ <div class="max-w-7xl mx-auto">
+  <h1 class="text-3xl font-bold mb-6 text-blue-800">Manajemen Data Obat</h1>
+
+  <!-- Tombol Tambah Obat -->
+  <div class="mb-4">
+    <a href="addObat.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
+      + Tambah Obat 
+    </a>
+  </div>
+
+  <!-- Tabel Daftar Obat -->
+  <div class="overflow-x-auto">
+    <table class="w-full bg-white border border-gray-200 shadow-md rounded text-sm md:text-base">
+      <thead class="bg-blue-100 text-blue-900">
+        <tr>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">ID</th>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">Nama Obat</th>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">Jenis</th>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">Stok</th>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">Harga</th>
+          <th class="text-left px-6 py-3 border whitespace-nowrap">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data Obat -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-3 border">OBT001</td>
+          <td class="px-6 py-3 border">Paracetamol</td>
+          <td class="px-6 py-3 border">Bottle</td>
+          <td class="px-6 py-3 border">120</td>
+          <td class="px-6 py-3 border">Rp40.000</td>
+          <td class="px-6 py-3 border">
+            <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</button>
+          </td>
+        </tr>
+           <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">OBT001</td>
+            <td class="px-4 py-2 border">Bufadol</td>
+            <td class="px-4 py-2 border">Tablet</td>
+            <td class="px-4 py-2 border">20</td>
+            <td class="px-4 py-2 border">Rp9.703</td>
+            <td class="px-4 py-2 border">
+              <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</button>
+            </td>
+          </tr>
+           <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">OBT001</td>
+            <td class="px-4 py-2 border">Inavitamax Omega Kids Softgel</td>
+            <td class="px-4 py-2 border">Capsul</td>
+            <td class="px-4 py-2 border">10</td>
+            <td class="px-4 py-2 border">Rp252.350</td>
+            <td class="px-4 py-2 border">
+              <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</button>
+            </td>
+          </tr>
+           <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">OBT001</td>
+            <td class="px-4 py-2 border">Mederma Pm Krim</td>
+            <td class="px-4 py-2 border">Tube</td>
+            <td class="px-4 py-2 border">20</td>
+            <td class="px-4 py-2 border">Rp116.000</td>
+            <td class="px-4 py-2 border">
+              <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</button>
+            </td>
+          </tr>
+           <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">OBT001</td>
+            <td class="px-4 py-2 border">Aza 20 Cream</td>
+            <td class="px-4 py-2 border">Tube</td>
+            <td class="px-4 py-2 border">120</td>
+            <td class="px-4 py-2 border">Rp56.000</td>
+            <td class="px-4 py-2 border">
+              <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded mr-2">Edit</button>
+              <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</button>
+            </td>
+          </tr>
+          <!-- Tambahkan lebih banyak data sesuai kebutuhan -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tambah Obat | MedStock</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="flex h-screen bg-white font-sans">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#9BB1D4] text-[#081F5C] p-6 flex flex-col space-y-6">
+    <h1 class="text-2xl font-extrabold">MedStock</h1>
+
+    <!-- Search -->
+    <div class="relative">
+      <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 rounded-md bg-[#EFEFEF] text-sm focus:outline-none"/>
+      <span class="absolute left-3 top-2.5 text-[#334EAC]">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+
+    <!-- Menu Items -->
+    <nav class="flex flex-col gap-2 text-sm font-medium">
+      <a href="homeAdm.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+      <a href="MeneData.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-circle-plus"></i> Medicines Management
+      </a>
+      <a href="AdmNotif.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-bell"></i> Notifications
+      </a>
+      <a href="AdmAcc.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-user"></i> Account
+      </a>
+      <a href="melihatLaporan.html" class="flex items-center gap-3 px-4 py-2 rounded hover:bg-[#081F5C]/50 transition-all">
+        <i class="fa-solid fa-chart-column"></i> Sales Report
+      </a>
+    </nav>
+  </aside>
+<!-- Main Content -->
+ <!-- Main Content -->
+<main class="flex-1 p-8">
+  <header class="flex items-center justify-between mb-6">
+    <div>
+      <h2 class="text-2xl font-bold text-gray-800">Welcome back, FIA!</h2>
+      <p class="text-gray-500 text-sm">
+        Here's what's happening with your pharmacy today.
+      </p>
+    </div>
+    <div class="text-sm text-gray-500 text-right">
+      <p>Thursday, May 22, 2025</p>
+      <p>Last updated 5 minutes ago</p>
+    </div>
+  </header>
+
+
+      <div class="flex-1 overflow-auto">
+        <div class="max-w-5xl mx-auto p-8">
+          <div class="bg-white rounded-lg shadow-md p-8">
+            <div class="mb-8 border-b pb-4">
+              <h2 class="text-2xl font-bold text-gray-800">Tambah Data Obat</h2>
+              <p class="text-gray-500 mt-1">
+                Silakan isi informasi obat dengan lengkap
+              </p>
+            </div>
+            <form id="medicineForm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="medicineId"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Kode Obat</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-barcode-line text-gray-400"></i>
+                    </div>
+                    <input
+                      type="text"
+                      id="medicineId"
+                      name="medicineId"
+                      class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                      placeholder="Masukkan kode obat"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="medicineName"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Nama Obat</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-capsule-line text-gray-400"></i>
+                    </div>
+                    <input
+                      type="text"
+                      id="medicineName"
+                      name="medicineName"
+                      class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                      placeholder="Masukkan nama obat"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="medicineType"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Jenis Obat</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-medicine-bottle-line text-gray-400"></i>
+                    </div>
+                    <select
+                      id="medicineType"
+                      name="medicineType"
+                      class="block w-full pl-10 pr-8 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Pilih jenis obat
+                      </option>
+                      <option value="tablet">Tablet</option>
+                      <option value="capsule">Kapsul</option>
+                      <option value="syrup">Sirup</option>
+                      <option value="injection">Suntik</option>
+                      <option value="cream">Krim</option>
+                    </select>
+                    <div
+                      class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+                    >
+                      <i class="ri-arrow-down-s-line text-gray-400"></i>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="stock"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Stok (Unit)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-stack-line text-gray-400"></i>
+                    </div>
+                    <input
+                      type="number"
+                      id="stock"
+                      name="stock"
+                      min="0"
+                      class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                      placeholder="Masukkan jumlah stok"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="price"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Harga (Rp)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-money-rupee-circle-line text-gray-400"></i>
+                    </div>
+                    <input
+                      type="number"
+                      id="price"
+                      name="price"
+                      min="0"
+                      class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                      placeholder="Masukkan harga obat"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="expiry"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tanggal Kadaluarsa</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-calendar-line text-gray-400"></i>
+                    </div>
+                    <input
+                      type="date"
+                      id="expiry"
+                      name="expiry"
+                      class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <label
+                  for="description"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Deskripsi Obat</label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute top-3 left-3 flex items-start pointer-events-none"
+                  >
+                    <i class="ri-file-text-line text-gray-400"></i>
+                  </div>
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="3"
+                    class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded focus:ring-primary focus:border-primary"
+                    placeholder="Masukkan informasi tambahan tentang obat"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end space-x-4">
+                <button
+                  type="button"
+                  id="cancelButton"
+                  class="px-6 py-2.5 bg-gray-200 text-gray-700 rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap"
+                >
+                  Batal
+                </button>
+                <button
+                  type="submit"
+                  id="saveButton"
+                  class="px-6 py-2.5 bg-blue-700 text-white rounded-button hover:bg-gray-400 transition-colors whitespace-nowrap"
+                >
+                  Simpan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="formHandler">
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("medicineForm");
+        const cancelButton = document.getElementById("cancelButton");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Simulate form submission
+          const saveButton = document.getElementById("saveButton");
+          saveButton.disabled = true;
+          saveButton.innerHTML =
+            '<i class="ri-loader-4-line animate-spin mr-2"></i> Menyimpan...';
+          setTimeout(() => {
+            alert("Data obat berhasil disimpan!");
+            form.reset();
+            saveButton.disabled = false;
+            saveButton.innerHTML = "Simpan";
+          }, 1000);
+        });
+        cancelButton.addEventListener("click", function () {
+          if (
+            confirm(
+              "Apakah Anda yakin ingin membatalkan? Data yang telah diisi akan hilang.",
+            )
+          ) {
+            form.reset();
+          }
+        });
+      });
+    </script>
+  </body>
+    ...
+</main>
+</html>
